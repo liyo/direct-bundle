@@ -47,6 +47,16 @@ class Router
         $this->defaultAccess = $container->getParameter('direct.api.default_access');
         $this->session = $this->container->get('session')->get($container->getParameter('direct.api.session_attribute'));
     }
+    
+    /**
+     * Check if router is processing upload response.
+     * 
+     * @return boolean
+     */
+    public function isUpload()
+    {
+        $this->request->isUpload();
+    }
 
     /**
      * Do the ExtDirect routing processing.

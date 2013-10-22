@@ -66,7 +66,7 @@ class DirectController extends Controller
 
         // create response
         $response = new Response($router->route());
-        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Content-Type', $router->isUpload() ? 'text/html' : 'text/html');
         
         return $response;
     }
